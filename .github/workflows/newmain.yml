@@ -19,6 +19,7 @@ jobs:
       run: composer update
     - name: Build code
       run: |
+        php bin/magento setup:db:status
         php bin/magento module:enable --all
         php bin/magento setup:upgrade
         php bin/magento setup:di:compile
