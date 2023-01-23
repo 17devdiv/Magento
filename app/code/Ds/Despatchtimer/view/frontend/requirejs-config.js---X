@@ -1,7 +1,0 @@
-var config = {
-    map: {
-        '*': {
-            countdownTimer:       'DS_Despatchtimer/js/despatchtimer/countdown'
-        }
-    }
-};

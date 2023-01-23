@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Email/etc/email_templates.xsd">
-	<template id="productfaq_template" label="Productfaq" file="productfaq.html" type="html" module="Dotsquares_Productfaq" area="frontend"/>
-	<template id="productfaq_reply_template" label="Productfaq" file="productfaqreply.html" type="html" module="Dotsquares_Productfaq" area="frontend"/>
-</config>
-
