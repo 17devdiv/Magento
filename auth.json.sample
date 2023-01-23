@@ -1,8 +1,8 @@
 {
     "http-basic": {
         "repo.magento.com": {
-            "username": "<public-key>",
-            "password": "<private-key>"
+            "username": "db900e756525e656339761e22df96bef",
+            "password": "2ca698130a3b02263ee5cea9f2f1631d"
         }
     }
 }
