@@ -20,7 +20,7 @@ jobs:
     - name: Test coding standard
       run: |
         composer require --dev magento/magento-coding-standard
-        vendor/bin/phpcs --standard=Magento2 --extensions=php,phtml -p -s /home/magento2divya/public_html/app/code
+        vendor/bin/phpcs --standard=Magento2 --extensions=php,phtml -p -s app/code/Dotsquares
     - name: Build code
       run: |
         php bin/magento setup:di:compile
