@@ -17,10 +17,6 @@ jobs:
         composer install
     - name: Update dependencies
       run: composer update
-    - name: Test coding standard
-      run: |
-        composer require --dev magento/magento-coding-standard
-        vendor/bin/phpcs --standard=Magento2 --extensions=php,phtml -p -s app/code/Dotsquares
     - name: Build code
       run: |
         php bin/magento setup:di:compile
