@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Email/etc/email_templates.xsd">
+	<template id="gernal_section_ds_enquiry_template_dropdown_owner_template" label="Default Owner Email template" file="email.html" type="html" module="Dotsquares_Enquiry" area="frontend"/> 
+	<template id="gernal_section_ds_enquiry_template_customer_dropdown_customer_template" label="Default Customer Email template" file="default_emailtemplate.html" type="html" module="Dotsquares_Enquiry" area="frontend"/> 
+ </config>
+ 
+ 
+ 

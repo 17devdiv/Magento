@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+     <head>
+		<css src="Dotsquares_Productfaq::css/productfaq.css"/>
+    </head>
+	<body>
+		<move element="example.tab" destination="product.info.description" after="reviews.tab"/>
+		<referenceContainer name="content.aside">
+			<block name="dotsquares_productfaq.productfaq" class="Dotsquares\Productfaq\Block\Productfaq"  template="productfaq/productfaq.phtml" after="product.view.extra" />
+		</referenceContainer>
+    </body>
+</page>

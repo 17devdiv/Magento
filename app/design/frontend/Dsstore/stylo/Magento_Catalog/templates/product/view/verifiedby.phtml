@@ -1,0 +1,8 @@
+<?php
+$product = $block->getProduct();
+if($product->getIsApprovedMarketplace()):
+?>
+<a href="#" class="text-uppercase d-inline-block text-center verified-btn"><span class="verified-by d-block">verified &amp; approved by</span><span class="verified-market d-block">magento marketplace</span></a>
+<?php
+endif;
+?>

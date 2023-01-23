@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+
+$columnsLimit = $block->getColumnsLimit() ?: 0;
+$_menuHtml = $block->getHtml('level-top', 'submenu', $columnsLimit);
+
+$addActive = false;
+$currentUrl = $this->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]);
+$currentUrl = explode("?", $currentUrl);
+$usedUrl = $this->getUrl("php/magento2-extensions");
+if($usedUrl == $currentUrl[0] || $usedUrl == $currentUrl[0]."/"){
+        $addActive = true;
+}
+?>
+
+<nav class="navigation" data-action="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+    	<li class="level0 nav--1 category-item level-top ui-menu-item" role="presentation"><a href="<?= $block->getUrl('') ?>" class="level-top ui-corner-all" id="ui-id--1" tabindex="-1" role="menuitem"><span>Home</span></a></li>
+    	<li class="level0 nav-0 category-item level-top ui-menu-item menum2" role="presentation"><a href="<?= $block->getUrl('php/magento2-extensions') ?>" class="level-top ui-corner-all" id="ui-id-0" tabindex="-1" role="menuitem"><span>Magento® 2 Extensions  </span></a></li>
+        <?= /* @noEscape */ $_menuHtml?>
+        <?= $block->getChildHtml() ?>
+    </ul>
+</nav>
+<?php if($addActive): ?>
+<script type="text/javascript">
+	require(['jquery'], function($) {
+        $( document ).ready(function() {
+		    $(".ui-menu-item").removeClass("active");
+	        $(".ui-menu-item").removeClass("has-active");
+	        $(".menum2").addClass("active");
+		});
+	});
+</script>
+<?php endif; ?>

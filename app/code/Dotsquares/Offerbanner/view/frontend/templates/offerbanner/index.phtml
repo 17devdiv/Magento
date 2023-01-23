@@ -1,0 +1,182 @@
+<?php
+$blog_collection = $block->getBlogCollection();
+$id = explode(',', $this->getId());
+
+?>
+
+<table cellspacing="0" class="data-table" id="data-table">
+    <tbody>
+    <?php
+	$test = $this->getId();
+    foreach ($blog_collection as $_dataset):
+	   $end_date   = $_dataset['end_date'];
+	   $start_date = $_dataset['start_date'];
+	   $current_date = date("Y-m-d");
+	
+	   if($end_date >= $current_date AND $start_date < $current_date ){ 
+       $status   = $_dataset['status'];
+       $bannerid = $_dataset['id'];
+
+	    
+		if (!empty($test)){
+			if (in_array($bannerid, $id)){				
+                if ($status == 1) {
+					
+                    $start_date = $_dataset['start_date'];
+                    $end_date   = $_dataset['end_date'];                   
+                    $start = strtotime($start_date);
+                    $end   = strtotime($end_date);
+                   
+                    list($year, $month, $day) = preg_split('[-]', $end_date);
+					
+                    $current_date = date("Y-m-d h:i:00");
+                    $current      = strtotime($current_date);
+                    if ($end <= $current) {
+                    } else {
+                        if ($start <= $current) {
+                            
+                            if ($start <= $end) {
+                                $finaldate = $year . '/' . $month . '/' . $day;
+								
+								
+?>
+           <tr>
+           <td  valign="middle" style="vertical-align:middle;">
+            <div class="img-offer-thumb">
+			<?php $blog_img = $block->getImageMediaPath(); ?>
+            <a href="<?php echo $_dataset['url'];?>" target="_blank">
+           <img style="background:url(<?php echo $blog_img . $_dataset['image'];?>) no-repeat scroll center center / 100%" />
+             <div class="offer-banner"><span class="offer-banner-title"><?php echo $_dataset['title'];?></span>
+            <ul class="countdown" id="banner<?php echo $_dataset['id'];?>">
+				<li> <span class="days">00</span>
+				<p class="days_ref">days</p>
+				</li>
+				<li class="seperator">:</li>
+				<li> <span class="hours">00</span>
+				<p class="hours_ref">hours</p>
+				</li>
+				<li class="seperator">:</li>
+				<li> <span class="minutes">00</span>
+				<p class="minutes_ref">minutes</p>
+				</li>
+				<li class="seperator">:</li>
+				<li> <span class="seconds">00</span>
+				<p class="seconds_ref">seconds</p>
+				</li>
+				</ul>
+            <p class="offer-banner-content"><?php echo $_dataset['content'];?></p>
+            </a>
+            </div> </div></td>
+            </tr>
+      <?php
+                            }
+                        }
+                    }
+                }
+		    }
+			
+		}else{
+			
+			
+		if ($status == 1) {
+                    $start_date = $_dataset['start_date'];
+                    $end_date   = $_dataset['end_date'];                   
+                    $start = strtotime($start_date);
+                    $end   = strtotime($end_date);
+                   
+                    list($year, $month, $day) = preg_split('[-]', $end_date);
+                    $current_date = date("Y-m-d h:i:00");
+                    $current      = strtotime($current_date);
+                    if ($end <= $current) {
+                    } else {
+                        if ($start <= $current) {
+                            
+                            if ($start <= $end) {
+                                $finaldate = $year . '/' . $month . '/' . $day;
+								
+?>
+           <tr>
+           <td  valign="middle" style="vertical-align:middle;">
+            <div class="img-offer-thumb">
+			<?php $blog_img = $block->getImageMediaPath(); ?>
+            <a href="<?php echo $_dataset['url'];?>" target="_blank">
+           <img style="background:url(<?php echo $blog_img . $_dataset['image'];?>) no-repeat scroll center center / 100%" />
+             <div class="offer-banner"><span class="offer-banner-title"><?php echo $_dataset['title'];?></span>
+            <ul class="countdown" id="banner<?php echo $_dataset['id'];?>">
+				<li> <span class="days">00</span>
+				<p class="days_ref">days</p>
+				</li>
+				<li class="seperator">:</li>
+				<li> <span class="hours">00</span>
+				<p class="hours_ref">hours</p>
+				</li>
+				<li class="seperator">:</li>
+				<li> <span class="minutes">00</span>
+				<p class="minutes_ref">minutes</p>
+				</li>
+				<li class="seperator">:</li>
+				<li> <span class="seconds">00</span>
+				<p class="seconds_ref">seconds</p>
+				</li>
+				</ul>
+            <p class="offer-banner-content"><?php echo $_dataset['content'];?></p>
+            </a>
+            </div> </div></td>
+            </tr>
+      <?php
+                            }
+                        }
+                    }
+                }	
+			
+			
+			
+		}
+
+
+
+
+
+
+
+		
+	    if (in_array($bannerid, $id)){
+?>
+	   <script class="source123" type="text/javascript">
+        $('#banner<?php echo $_dataset['id']; ?>').downCount({
+        date: '<?php echo $finaldate; ?>',
+        offset: +0
+        }, function () {
+            //alert('WOOT WOOT, done!');
+        });
+        </script> 
+		<?php }else{?>
+			
+			
+			 <script class="source123" type="text/javascript">
+        $('#banner<?php echo $_dataset['id']; ?>').downCount({
+        date: '<?php echo $finaldate; ?>',
+        offset: +0
+        }, function () {
+            //alert('WOOT WOOT, done!');
+        });
+        </script> 
+			
+			
+	   <?php }
+	   }else{?>
+		  <p>You have no submited any offer.</p> 
+		   
+		   
+	   <?php }
+    endforeach;
+	
+?>
+    </tbody>
+</table>
+
+<?php //echo $this->getPagerHtml(); ?>
+<script type="text/javascript">
+jQuery.noConflict();
+</script> 
+

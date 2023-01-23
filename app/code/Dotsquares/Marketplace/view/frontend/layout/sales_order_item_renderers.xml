@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+
+ *
+ * @category    Dotsquares
+ * @package     Dotsquares_Marketplace
+ * @version     3.5.2
+
+ *
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="Dotsquares_Marketplace::css/style.css" />
+	</head>
+	<body>
+		<referenceBlock name="sales.order.items.renderers">
+			<block class="Dotsquares\Marketplace\Block\Order\Item\Renderer\DefaultRenderer"
+				as="default" template="order/items/renderer/default.phtml" />
+		</referenceBlock>
+	</body>
+</page>

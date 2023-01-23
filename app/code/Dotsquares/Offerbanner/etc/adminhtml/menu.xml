@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Dotsquares. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="dotsquares::base" title="Dotsquares" module="Dotsquares_Offerbanner" sortOrder="90" resource="Dotsquares_Offerbanner::sample"/>
+        <add id="dotsquares_offerbanner::offerbanner" title="Offer Banner" module="Dotsquares_Offerbanner" sortOrder="10" parent="dotsquares::base" action="dotsquares_offerbanner/items/" resource="Dotsquares_Offerbanner::items"/>
+    </menu>
+</config>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+
+ *
+ * @category    Dotsquares
+ * @package     Dotsquares_Marketplace
+ * @version     3.5.2
+
+ *
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+	label="Seller Order Items" design_abstraction="custom">
+	<head>
+		<css src="Dotsquares_Marketplace::css/style.css" />
+	</head>
+	<body>
+		<block class="Dotsquares\Marketplace\Block\Order\Seller\Item" name="seller_items"
+			template="order/seller/items.phtml" cacheable="false">
+		</block>
+	</body>
+</page>

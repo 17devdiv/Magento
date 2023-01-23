@@ -1,0 +1,13 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<update handle="customer_account"/>
+	<body>
+		<referenceBlock name="page.main.title">
+			<action method="setPageTitle">
+				<argument translate="true" name="Order Enquiry" xsi:type="string">Order Enquiry</argument>
+			</action>
+		</referenceBlock>
+		<referenceContainer name="content">
+			<block class="Magento\Framework\View\Element\Template" name="order_enquiry" template="Dotsquares_Enquiry::enquiry.phtml" ifconfig="gernal_section_ds/general/dropdown_enable" />
+		</referenceContainer>
+	</body>
+</page>

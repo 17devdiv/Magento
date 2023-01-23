@@ -1,0 +1,21 @@
+{
+    "name": "dotsquares/module-marketplace",
+    "description": "Dotsquares Marketplace Extension ",
+    "type": "magento2-module",
+    "version": "3.5.3",
+    "require": {
+    	"php": "~7.4.9"
+  	},
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Dotsquares\\Marketplace\\": ""
+        }
+    }
+}

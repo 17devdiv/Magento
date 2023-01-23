@@ -1,0 +1,34 @@
+<?php $meta = $block->getMeta();
+if($meta):
+?>
+<meta property="og:title" content="<?= $meta['title'] ?>" />
+<meta property="og:description" content="<?= $block->escapeHtml($meta['description']) ?>" />
+<?php endif; ?>
+
+<?php
+$helper = $this->helper('\Magento\Catalog\Helper\Data');
+$values = $helper->getBreadcrumbPath();
+if($values){
+	$crumb = array();
+	$count = 1;
+	foreach ($values as $value) {
+		$crumb[] = array(
+			"@type" => "ListItem",
+			"position"=> $count,
+			"name"=> $value["label"],
+			"item" => ["link"]
+		);
+		$count++;
+	}
+	?>
+
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org/",
+	  "@type": "BreadcrumbList",
+	  "itemListElement": <?= json_encode($crumb) ?>
+	}
+	</script>
+<?php
+}
+?>

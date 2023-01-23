@@ -1,0 +1,38 @@
+{
+    "newsletterdiscountpro_program": {
+        "column": {
+            "program_id": true,
+            "from_date": true,
+            "to_date": true,
+            "number_order": true,
+            "use_coupon": true,
+            "coupon_code": true,
+            "discount_type": true,
+            "discount_value": true,
+            "discount_on": true,
+            "created_at": true,
+            "priority": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "sales_order": {
+        "column": {
+            "newsletter_discount": true,
+            "base_newsletter_discount": true
+        }
+    },
+    "sales_invoice": {
+        "column": {
+            "newsletter_discount": true,
+            "base_newsletter_discount": true
+        }
+    },
+    "sales_creditmemo": {
+        "column": {
+            "newsletter_discount": true,
+            "base_newsletter_discount": true
+        }
+    }
+}

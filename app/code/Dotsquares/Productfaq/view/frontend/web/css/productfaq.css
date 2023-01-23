@@ -1,0 +1,26 @@
+.close_question{float: right;}
+.product_question_listing .product_question_list ul.answer_list{padding: 0;margin: 0;}
+.product_question_listing .product_question_list ul.answer_list li{ border-bottom: solid 1px #eaeaea;padding:16px 0 16px 25px;    margin: 0;}
+.product_question_listing .product_question_list ul.answer_list li .entry-comment{ margin: 6px 0 0 0;font-size: 14px;color: #040404; font-weight:600;}
+.product_question_listing .product_question_list ul.answer_list li .entry-comment strong {color: #f54343;}
+.product_question_listing .product_question_list ul.answer_list li p {color: #999; margin: 0 0 0 22px;}
+.product_question_listing .product_question_list ul.answer_list li p .added-on{font-size: 11px;}
+.product_question_listing .product_question_list ul.answer_list li .entry-answer {margin: 6px 0 0 0;font-size: 14px;color: #333;}
+p.ask_question {font-size: 15px; color: #000; border: solid 2px #000; max-width: 150px; text-align: center; padding: 5px 0; text-transform: uppercase; font-weight:bold; margin: 0 0 20px 0; cursor: pointer;}
+.product_question_listing .answer_list {list-style: none;}
+.product_question_listing{border: solid 1px #ccc;margin: 0 0 20px 0;}
+.product_question_listing .question_toolbar{background: #f6f6f6;font-size: 14px;padding: 11px 14px;color: #fff;}
+.product_question_listing .question_toolbar select#pagination_tool {max-width: 250px;}
+.Product_alert_content {border: solid 1px #ccc;margin: 0 0 20px 0;}
+.Product_alert_content .product_alert {}
+.Product_alert_content .product_alert .field.note.no-label {font-size: 18px;background: #f6f6f6;padding: 10px 15px;    margin: 0 0 15px 0;}
+.Product_alert_content .product_alert .innnerfaq {    padding: 6px 17px; max-width: 500px;}
+.Product_alert_content .product_alert .field span {margin: 0 0 4px 0;display: inline-block;font-size: 13px;}
+.Product_alert_content .submit.button { padding: 0 0 22px 18px;}
+.close_question {background: #797474;font-size: 14px !important;	padding: 4px 10px;color: #fff;margin: 7px 8px 0 0;color: #ffffff !important;}
+.close_question:hover{background: #000;}
+.pages {display: inline !important;}
+.limiter {display: block !important;}
+.limiter-text {display: block !important;}
+.limiter-label{display: block !important;}
+.close_question {color: #006bb4; cursor: pointer; font-size: 21px; font-weight: normal}

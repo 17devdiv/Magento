@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Elasticsearch\Model\Adapter\BatchDataMapper\ProductDataMapper">
+        <plugin name="out_of_stock_last_batch_mapper"
+                type="Dotsquares\Sortbyoutofstock\Plugin\Model\Adapter\BatchDataMapper\ProductDataMapperPlugin"/>
+    </type>
+
+    <type name="Magento\Elasticsearch\Model\ResourceModel\Fulltext\Collection\SearchResultApplier">
+        <plugin name="set_prevent_price_sort_flag" type="Dotsquares\Sortbyoutofstock\Plugin\Elasticsearch\Model\ResourceModel\Fulltext\Collection\PreventPriceSortFlagPlugin" />
+    </type>
+
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Collection\ProductLimitation">
+        <plugin name="prevent_price_sort" type="Dotsquares\Sortbyoutofstock\Plugin\Catalog\Model\ResourceModel\Product\Collection\ProductLimitation\PreventPriceSortPlugin" />
+    </type>
+</config>

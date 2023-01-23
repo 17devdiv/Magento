@@ -1,0 +1,22 @@
+{
+    "name": "dotsquares/module-sortbyoutofstock",
+    "description": "Sort by outofstock for Magento 2",
+    "type": "magento2-module",
+    "require": {
+        "php": "~7.3.0||~7.4.0",
+        "magento/module-elasticsearch-7": "100.4.3"
+    },
+    "version": "1.0.1",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Dotsquares\\Sortbyoutofstock\\": ""
+        }
+    }
+}

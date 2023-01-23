@@ -1,0 +1,49 @@
+<?php 
+/**
+ * Dotsquares
+ * 
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @author Dotsquares
+ * @package Dotsquares_GDPR
+ * @copyright Copyright (c) Dotsquares (https://www.dotsquares.com/)
+ */
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$helper = $objectManager->create('Dotsquares\Gdpr\Helper\Data');
+$gdpr_enable = $helper->getConfig('cusotmerdelete/gdprlaw/gdpr_enable');
+$websitecheckobxmassage = $helper->getConfig('cusotmerdelete/gdprlaw/websitecheckobxmassage');
+$websitecheckobxmassage = $block->filterOutputHtml($websitecheckobxmassage);
+$gdprcheckobxmassage = $helper->getConfig('cusotmerdelete/gdprlaw/gdprcheckobxmassage');
+$gdprcheckobxmassage = $block->filterOutputHtml($gdprcheckobxmassage);
+$gdpr_cookies = $block->getCookie();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+if($customerSession->isLoggedIn()) {
+	$customer_collection = $objectManager->create('Magento\Customer\Model\Customer')->load($customerSession->getCustomerId());
+	$websiteterms = $customer_collection->getWebsiteterms();
+}else{
+	$websiteterms = 0;
+}
+if($gdpr_enable == 1):
+?>
+	<div class="field required">
+		<div class="control">
+			<?php if($websiteterms == 0){ ?>
+				<input type="checkbox" class="input-text gdprbox" data-validate="{required:true}" aria-required="true" name="websiteterms" value="1">
+			<?php }else{ ?>
+				<input type="checkbox" class="input-text gdprbox" data-validate="{required:true}" aria-required="true" name="websiteterms" value="1" checked="checked" disabled />
+			<?php } ?>
+				<span><?php echo $websitecheckobxmassage; ?></span>
+		</div>
+	</div>
+	<div class="field required">
+		<div class="control">
+			<input type="checkbox" class="input-text gdprbox" data-validate="{required:false}" aria-required="false" name="othermails" value="1" /> 
+				<span><?php echo $gdprcheckobxmassage; ?></span>
+		</div>
+	</div>
+<?php endif; ?>

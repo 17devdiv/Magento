@@ -1,0 +1,34 @@
+<?php
+/**
+ * Dotsquares
+ * 
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @author Dotsquares
+ * @package Dotsquares_GDPR
+ * @copyright Copyright (c) Dotsquares (https://www.dotsquares.com/)
+ */
+
+$accountId = $block->getConfig(\Magento\GoogleAnalytics\Helper\Data::XML_PATH_ACCOUNT);
+$blockObj = $block->getLayout()->createBlock('Dotsquares\Gdpr\Block\Permission');
+$gdpr_cookies = $blockObj->getCookie();
+if($gdpr_cookies == 'true'):
+
+?>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_GoogleAnalytics/js/google-analytics": {
+            "isCookieRestrictionModeEnabled": <?= (int)$block->isCookieRestrictionModeEnabled() ?>,
+            "currentWebsite": <?= (int)$block->getCurrentWebsiteId() ?>,
+            "cookieName": "<?= /* @escapeNotVerified */ \Magento\Cookie\Helper\Cookie::IS_USER_ALLOWED_SAVE_COOKIE ?>",
+            "ordersTrackingData": <?= /* @escapeNotVerified */ json_encode($block->getOrdersTrackingData()) ?>,
+            "pageTrackingData": <?= /* @escapeNotVerified */ json_encode($block->getPageTrackingData($accountId)) ?>
+        }
+    }
+}
+</script>
+<?php endif; ?>

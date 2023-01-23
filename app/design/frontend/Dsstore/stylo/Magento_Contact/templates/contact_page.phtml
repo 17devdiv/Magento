@@ -1,0 +1,52 @@
+
+<?php
+    $contacts_config = $this->helper('Dotsquares\Stylo\Helper\Data')->getConfig('stylo_settings/contacts');
+    $_enable = $contacts_config['enable'];
+    if($_enable){
+        $_apikey = $contacts_config['api_key'];
+        $_full_width = $contacts_config['full_width'];
+        $_address = $contacts_config['address'];
+        $_zoom = $contacts_config['zoom'];
+        $_center_lat = $contacts_config['latitude'];
+        $_center_lng = $contacts_config['longitude'];
+?>
+
+<?php if(!$_full_width): ?>
+<div class="container">
+<?php endif; ?>
+<div id="store_map" style="min-height: 300px; width: 100%;">
+    
+   
+ <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2514.2328324503837!2d-0.2051157!3d50.937907!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48759219eaa589bb%3A0xb978bad3c19c3f6c!2sDotsquares%20Ltd.!5e0!3m2!1sen!2sin!4v1589259665573!5m2!1sen!2sin" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+   
+   
+   
+</div>
+<?php if(!$_full_width): ?>
+</div>
+<?php endif; ?>
+<?php
+    }
+?>
+<?php
+    
+    $_infoblock = $contacts_config['infoblock'];
+    $_customblock = $contacts_config['customblock'];
+    
+    if($_customblock) {
+        $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
+        if($block) {
+            $block->setBlockId($_customblock);
+        }
+        if($block){
+            echo '<div class="row"><div class="col-md-12">'.$block->toHtml().'</div></div>';
+        }
+    }
+?>
+<div class="contact-form-block ">
+    <div class="col-md-8"><?php echo $this->getChildHtml('contactForm')?></div>
+    <div class="col-md-4 contact-info">
+        <div class="contacts-title"><?php echo __('Contact') ?> <b><?php echo __('Details') ?></b></div>
+        <?php echo $_infoblock; ?>
+    </div>
+</div>

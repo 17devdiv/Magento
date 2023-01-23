@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="newsletterdiscountpro_program" resource="default" engine="innodb" comment="Seller Vacation Table">
+    <column xsi:type="int" name="program_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Program Id"/>
+    <column xsi:type="datetime" name="from_date" on_update="false" nullable="true" comment="From Date"/>
+    <column xsi:type="datetime" name="to_date" on_update="false" nullable="true" comment="To Date"/>
+    <column xsi:type="int" name="number_order" padding="10" unsigned="true" nullable="false" comment="Number Order"/>
+
+    <column xsi:type="int" name="use_coupon" padding="10" unsigned="true" nullable="false" comment="User Coupon"/>
+    <column xsi:type="text" name="coupon_code" nullable="false" comment="Coupon Code" />
+     <column xsi:type="text" name="discount_type" nullable="false" comment="Discount Type" />
+    <column xsi:type="decimal" name="discount_value" nullable="false" comment="Discount Value" />
+
+      <column xsi:type="text" name="discount_on" nullable="false" comment="Discount On" />
+<column xsi:type="datetime" name="created_at" on_update="false" nullable="false" comment="Created At"/>
+    <column xsi:type="int" name="priority" nullable="false" comment="Priority" /> 
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="program_id"/>
+    </constraint>
+
+   </table>
+
+<table name="sales_order" resource="sales" engine="innodb" comment="Sales Order">
+        <column xsi:type="decimal" name="newsletter_discount" nullable="true" comment="Newsletter Discount"/>
+        <column xsi:type="decimal" name="base_newsletter_discount" nullable="true" comment="Base Newsletter Discount"/>
+</table>
+
+<table name="sales_invoice" resource="sales" engine="innodb" comment="Sales Invoice">
+        <column xsi:type="decimal" name="newsletter_discount" nullable="true" comment="Newsletter Discount"/>
+        <column xsi:type="decimal" name="base_newsletter_discount" nullable="true" comment="Base Newsletter Discount"/>
+</table>
+
+<table name="sales_creditmemo" resource="sales" engine="innodb" comment="Sales CreditMemo">
+        <column xsi:type="decimal" name="newsletter_discount" nullable="true" comment="Newsletter Discount"/>
+        <column xsi:type="decimal" name="base_newsletter_discount" nullable="true" comment="Base Newsletter Discount"/>
+</table>
+
+
+   </schema>

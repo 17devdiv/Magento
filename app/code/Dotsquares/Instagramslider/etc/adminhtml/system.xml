@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <!-- Add new Tab -->
+        <tab id="dotsquares" translate="label" sortOrder="13">
+            <label>Dotsquares Extension</label>  
+        </tab>
+        <section id="instagramslider" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Instagramslider</label>
+            <tab>dotsquares</tab>
+			 <resource>Dotsquares_Instagramslider::Dotsquares_instagramslider</resource>
+            <group id="general" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Instagram Slider Options</label>
+				<field id="enable" translate="label " type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+						<label>Enable</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="showhomepage" translate="label" type="select" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+						<label>Display on Homepage</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+					<field id="instatitle" translate="label comment" type="text" sortOrder="40"  showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Title</label>
+						<comment>
+							Enter your Title.
+						</comment>
+                </field>
+				<field id="userid" translate="label comment" type="text" sortOrder="40"  showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>User Id</label>
+						<comment>
+							Enter your userId.
+						</comment>
+                </field>
+				
+			<field id="accesstoken" translate="label comment" type="text" sortOrder="40"  showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Access Token</label>
+						<comment>
+							Enter your Access Token.
+						</comment>
+                </field>	
+			<field id="noofitems" translate="label comment" type="text" sortOrder="40"  showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>No Of Items</label>
+						<comment>
+							Enter no of image you want to show in slider
+						</comment>
+                </field>
+                <field id="simpletext" translate="label" type="label" sortOrder="60"  showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Add code to your CMS page</label>
+                </field>			
+				
+			</group>
+		</section>
+    </system>
+</config>

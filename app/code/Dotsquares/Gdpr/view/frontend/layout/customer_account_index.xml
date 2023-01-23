@@ -1,0 +1,22 @@
+<?xml version="1.0"?><!--
+**
+ * Dotsquares
+ * 
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @author Dotsquares
+ * @package Dotsquares_GDPR
+ * @copyright Copyright (c) Dotsquares (https://www.dotsquares.com/)
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="content">
+		    <block class="Dotsquares\Gdpr\Block\Permission" name="gdpr_dashboard" after="address" template="Dotsquares_Gdpr::form/dashboard.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

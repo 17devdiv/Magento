@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="dotsquares::productfaq" title="Dotsquares Product'Faq" module="Dotsquares_Productfaq" sortOrder="30" resource="Dotsquares_Productfaq::sample"/>
+        <add id="dotsquares_productfaq::productfaq" title="Product'Faq" module="Dotsquares_Productfaq" sortOrder="10" parent="dotsquares::productfaq" action="dotsquares_productfaq/items/" resource="Dotsquares_Productfaq::items"/>
+    </menu>
+</config>

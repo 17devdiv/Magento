@@ -1,0 +1,33 @@
+<?xml version="1.0"?><!--
+**
+ * Dotsquares
+ * 
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @author Dotsquares
+ * @package Dotsquares_GDPR
+ * @copyright Copyright (c) Dotsquares (https://www.dotsquares.com/)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cusotmerdelete>
+            <gdprlaw>
+                <gdpr_enable>1</gdpr_enable>
+                <gdprcheckobxmassage>Newsletter - Tick the box to receive our new and exclusive releases.</gdprcheckobxmassage>
+                <websitecheckobxmassage><![CDATA[<p>Website terms and conditions - Please see term<a  href="{{config path="web/unsecure/base_url"}}privacy-policy-cookie-restriction-mode" traget="_blank"> click here.</a></p>]]></websitecheckobxmassage>
+            </gdprlaw>
+            <cookies>
+                <cookies_enable>1</cookies_enable>
+                <cookies_msg>This website requires cookies to provide all of its features. By using our website, you agree to our use of cookies.</cookies_msg>
+                <websitepolicymsg><![CDATA[<p>Website terms and conditions - Please see term<a  href="{{config path='web/unsecure/base_url'}}privacy-policy-cookie-restriction-mode" traget="_blank"> click here.</a></p>]]></websitepolicymsg>
+            </cookies>
+            <general>
+                <deletecusotmer_enable>1</deletecusotmer_enable>
+            </general>
+        </cusotmerdelete>
+    </default>
+</config>

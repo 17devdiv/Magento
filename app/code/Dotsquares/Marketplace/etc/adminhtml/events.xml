@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+
+ *
+ * @category    Dotsquares
+ * @package     Dotsquares_Marketplace
+ * @version     3.5.2
+
+ *
+ */
+! -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+  <event name="sales_order_creditmemo_refund">
+    <observer name="marketplace_order_refund" instance="Dotsquares\Marketplace\Observer\Refund" />
+  </event>
+  <event name="sales_order_invoice_save_after">
+    <observer name="marketplace_order_invoice" instance="Dotsquares\Marketplace\Observer\Invoice" />
+  </event>
+  <event name="sales_order_shipment_save_after">
+    <observer name="marketplace_order_shipment" instance="Dotsquares\Marketplace\Observer\Shipment" />
+  </event>
+  <event name="adminhtml_customer_save_after">
+    <observer name="marketplace_admin_customer_create" instance="Dotsquares\Marketplace\Observer\Adminseller" />
+  </event>
+  <event name="catalog_product_save_after">
+    <observer name="sellerstatus" instance="Dotsquares\Marketplace\Observer\Sellerstatus"/>
+  </event>
+</config>

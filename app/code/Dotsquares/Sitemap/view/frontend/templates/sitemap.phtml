@@ -1,0 +1,267 @@
+<script>
+$(document).ready(function(){
+alert("dsadsa");
+  $("button").click(function(){
+    $("p").toggle();
+  });
+});
+</script>
+ <head>
+        
+        <title>Html sitemap</title>
+    </head>
+<div class="ds-sitemap">
+
+<?php
+
+
+
+$helper = $this->helper('Dotsquares\Sitemap\Helper\Data');
+$values = $helper->getSitemapPageTitle();
+#echo $values;
+$values1 = $helper->getPagesTitle();
+$values2 = $helper->getCategoryTitle();
+$values3 = $helper->getProductTitle();
+$values4 = $helper->getADDLinksTitle();
+
+echo '<h1>';
+echo $values;
+echo '</h1>';
+
+?>
+
+
+
+
+<div id="dotsquares-seo-html-sitemap">
+    <?php
+
+    $result= $block->renderHtmlSiteMap() 
+
+
+    ?>
+</div>
+
+<div id="dotsite-seo-html-sitemap">
+	
+    
+    <?php 
+
+//$pages = $block->getPages();
+
+if($result){
+echo '<h2>';
+echo $values1;
+echo '</h2><ul>';
+
+
+	foreach($result as $page) {
+	    echo '<li><a href="/'.$page->getIdentifier().'">'.$page->getTitle().'</a></li>'; // get Title/name of CMS Page
+	}
+}
+
+?>
+<?php  echo '</ul>'; ?>
+</div>
+
+<div id="dotsquares-seo-html-sitemap">
+    <?php
+
+    $result1= $block->renderHtmlSiteMap1() 
+
+
+    ?>
+</div>
+
+<div id="dotsquares-seo-html-sitemap">
+    <?php
+
+    $result2= $block->renderHtmlSiteMap2() ;
+    $result12= $block->renderHtmlSiteMap12()
+
+
+
+    ?>
+</div>
+
+<div id="dotsquares-seo-html-sitemap">
+    <?php
+
+    $result3= $block->renderHtmlSiteMap3() 
+
+
+    ?>
+</div>
+
+
+<div id="dotsquares-seo-html-sitemap">
+    <?php
+
+    $result4= $block->renderHtmlSiteMap4() 
+
+
+    ?>
+</div>
+
+
+<?php 
+ //$categorys = $this->getCategoryCollection();
+$catprod=$helper->CatProdDependent();
+echo '<div class="category-section">';
+if($catprod && $result2)
+{
+
+if($result1){
+
+    echo '<h2>';
+    echo $values2;
+    echo '</h2>';
+
+  foreach($result1 as $category){
+    echo '<h4>';
+    $Dcheck=$category->getName();
+    if($Dcheck=='Default Category'){
+    echo '<a href="#">'.$Dcheck.'</a>';
+  }
+  else
+  {
+    echo '<a href="'.$category->geturl().'">'.$Dcheck.'</a>';
+  }
+     #echo $category->getName();
+     echo '</h4><ul class="category-links">';
+     $catid=$category->getId();
+
+     if($result2)
+{
+   
+    echo "</ul>";  
+
+echo '<ul class="category-title-links">';
+
+
+	     #$categoryId =  // fetching products in category id 6
+	$categoryProducts = $this->getCategoryProducts($catid);
+	foreach ($categoryProducts as $product) {
+        echo '<li><a href="'.$product->getProductUrl().'">'.$product->getName().'</a>';
+	    #echo $product->getName() . ' - ' . $product->getProductUrl() . '<br />';
+	    echo '</li>';
+	}
+
+    echo '</ul>';
+}
+    
+  }
+  
+
+}
+echo "</div>";
+}
+
+else
+{
+
+if($result1){
+
+echo '<h2>';
+echo $values2;
+echo '</h2>';
+echo '<ul class="cat_title">';
+foreach($result1 as $category){
+    echo '<h4>';
+    $Dcheck=$category->getName();
+    if($Dcheck=='Default Category'){
+    echo '<a href="#">'.$Dcheck.'</a>';
+  }
+  else
+  {
+    echo '<a href="'.$category->geturl().'">'.$Dcheck.'</a>';
+  }
+     #echo $category->getName();
+     echo '</h4>';
+   
+ }
+ echo '</ul>';
+}
+
+if($result2){
+ echo '<div class="category-section"><h2>';
+echo $values3;
+echo '</h2><ul class="category-links">';
+
+
+
+
+foreach($result12 as $category)
+{
+     $catid=$category->getId();
+
+     
+{
+       #echo "</br>";
+    $categoryProducts = $this->getCategoryProducts($catid);
+    foreach ($categoryProducts as $product) {
+        echo '<li><a href="'.$product->getProductUrl().'">'.$product->getName().'</a></li>';
+        #echo $product->getName() . ' - ' . $product->getProductUrl() . '<br />';
+        #echo '</br>';
+    }
+}
+     
+  }
+
+
+  echo '</ul></div>';
+}
+
+
+
+
+
+
+
+}
+  ?>
+
+   
+<?php 
+if($result3){
+echo '<div class="additional-section"><h2>';
+
+echo $values4;
+echo '</h2><ul class="additional_links">';
+foreach ($result3 as $key => $item){
+     echo '<li><a target="blank" href="' . $key . '">' . __($item) . '</a></li>';
+ }
+ echo '</ul></div>';
+}
+
+?>
+<div class="userlinks-section">
+<h2>Userlinks</h2>
+<ul class="userlinks-block">
+    <?php 
+    use Magento\Customer\Model\Url;
+
+//$pages = $block->getPages();
+
+	foreach($result4 as $page) {
+	    #echo $page;
+         #echo '</br>';
+        if($page=='forget')
+        {
+             echo '<li><a href="'.$this->getUrl('customer/account/forgotpassword').'">'."Forgot Password".'</a></li>';
+        }
+        if($page=='register' || $page=='login'){
+	    echo '<li><a href="'.$this->getUrl('customer/account/login').'">'.ucwords($page).'</a></li>';
+
+    }
+	}
+
+?>
+</ul>
+</div>
+
+</div>
+
+   
+
+

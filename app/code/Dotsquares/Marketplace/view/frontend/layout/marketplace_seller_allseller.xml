@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/**
+
+ *
+ * @category    Dotsquares
+ * @package     Dotsquares_Marketplace
+ * @version     3.5.2
+
+ *
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+	xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/
+Framework/View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="Dotsquares_Marketplace::css/style.css" />
+	</head>
+	<body>
+		<referenceContainer name="content">
+			<block class="Dotsquares\Marketplace\Block\Seller\Allseller"
+				template="seller/allseller.phtml" />
+		</referenceContainer>
+	</body>
+</page>

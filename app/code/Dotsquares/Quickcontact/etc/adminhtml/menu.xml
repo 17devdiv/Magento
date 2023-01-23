@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Backend/etc/menu.xsd">
+	    <menu>
+			<add id="quickcontact::base" title="Quickcontact" module="Dotsquares_Quickcontact" sortOrder="12" resource="Dotsquares_Quickcontact::sample"/>
+			<add id="dotsquares_quickcontact::quickcontact" title="Quickcontact" module="Dotsquares_Quickcontact" sortOrder="12" parent="quickcontact::base" action="dotsquares_quickcontact/items/" resource="Dotsquares_Quickcontact::items"/>
+		</menu>
+</config>
+

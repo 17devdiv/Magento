@@ -1,0 +1,56 @@
+.gdprbox{float:left;}
+.dot_cookies {background:#26a9e0;color: #fff;text-align: center;width: 100%;padding:10px 0;}
+.website_policy p {margin: 0px 0 10px;}
+.dot_cookies > p{margin:0;}
+.dot_cookies .website_policy button {
+    background-image: none;
+    background: #1979c3;
+    color: #fff;
+    border: 1px solid #1979c3;
+    cursor: pointer;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    width: auto;
+    box-shadow: none;
+}
+.dot_cookies .website_policy button:hover {
+    background: #006bb4;
+    border: 1px solid #006bb4;
+    color: #fff;
+}
+.order_details span {
+	width: 100%;
+	float: left;
+	padding: 8px 0px 3px 7px;
+	border: 1px solid;
+	border-bottom: none;
+	font-weight: bold;
+}
+.order_content span{
+	width: 100%;
+	float: left;
+	padding: 8px 0px 3px 7px;
+	border: 1px solid;
+	border-left: none;
+	border-bottom: none;
+	font-weight: bold;
+	text-align:center;
+}
+.order_details {
+	width: 28%;
+	float: left;
+}
+.order_content span:last-child, .order_details span:last-child {
+	border-bottom: 1px solid;
+}
+.order_content {
+	width: 10%;
+	float: left;
+}

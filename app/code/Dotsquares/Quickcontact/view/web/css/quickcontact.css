@@ -1,0 +1,81 @@
+.footerform_container {text-align: left; float: left; margin-left: 10px; background: url(uc_bg.png) repeat scroll 0 0 #FFFFFF;
+    border: 3px solid #999999;  border-radius: 10px 10px 10px 10px; padding: 10px; width:80%; padding:15px;}
+.footerform_container label {line-height: 14px;}
+.footerform_container .form-field .input-text {width: 170px;}
+.footerform_container .form-field textarea {width: 100%;  resize:none; border: 1px solid #ccc;
+border-radius: 4px;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+color: #555; height:100px;}
+.footerform_container .validation-advice {width: 170px;}
+.footerform_container .form-button {margin-top: 3px;}
+#security_code {margin-top: 3px}
+
+
+
+
+.footerform_container .form-field .input-text{
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+color: #555;
+display: block;
+font-size: 14px;
+height: 34px;
+line-height: 1.42857;
+padding: 6px 12px;
+transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+width: 100%;}
+
+
+
+.footerform_container .form-field.security .input-text{width:59% !important; display:inline-block;}
+.mr_captcha_img{margin-bottom:-15px;}
+
+.footerform_container form label{color: #222;
+    font-family: "Josefin Sans";
+    font-size: 1.33em;
+    font-weight: bold;
+}
+.footerform_container .form-field{margin-bottom:15px;}
+.footerform_container .button.form-button{-moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+	background:#272424;
+	color:#fff;
+	float:right;
+}
+
+.footerform_container .required-entry textarea{width:60% !important;}
+
+@media(max-width:589px){
+	.footerform_container{width:97%;}
+}
+.capimg {
+  display: inline-block;
+  float: left;
+  margin-top: 15px;
+  width: 42%;
+}
+
+.removebu {
+  position: relative;
+}
+
+.removebu > img {
+  left: 211px;
+  position: absolute;
+  top: -5px;
+}

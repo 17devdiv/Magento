@@ -1,0 +1,11 @@
+<?php
+$category = $block->getCurrentCategory();
+
+if($category->getFooterAreaContent()):
+?>
+	<div class="footer-are-content">
+		<?= $category->getFooterAreaContent(); ?>
+	</div>
+<?php
+endif;
+?>

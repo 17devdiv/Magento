@@ -1,0 +1,9 @@
+<!-- ko ifnot: (isCustomerLoggedIn) -->
+<!-- ko if: (isDisplayed) -->
+<div class="field _required">
+    <input type="checkbox" data-validate="{required:true}" name="gdpr" data-bind="checked: isRegisterNewsletter, attr: {id: 'place-order-newsletter'}"/>
+    <label data-bind="html: gdprcheckobxmassage(),attr: {for: 'place-order-newsletter'}"></label>
+	<div for="websiteterms" generated="true" class="mage-error" id="gdpr-error" style="display:none;">This is a required field.</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->

@@ -1,0 +1,26 @@
+{
+    "name": "dotsquares/magento2-Defaultset",
+    "description": "Magento2 Extension Product Use Default Value checkbox bulk Update",
+    "keywords": [
+        "magento 2",
+        "Defaultset",
+        "Defaultset attribute",
+        "Defaultset All product",
+        "Defaultset specific product sku",
+        "Defaultset Module"
+    ],
+    "type": "magento2-module",
+    "version": "0.0.1",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Dotsquares\\Defaultset\\": ""
+        }
+    }
+}

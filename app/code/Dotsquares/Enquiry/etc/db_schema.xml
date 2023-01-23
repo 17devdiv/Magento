@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="dotsquares_enquiry_items" resource="default" engine="innodb" comment="dotsquares_enquiry_items_custom">
+        <column xsi:type="int" name="id"  unsigned="true" nullable="false" identity="true" comment="ID"/>
+       <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Name"/>
+	        <column xsi:type="varchar" name="client_id" nullable="false" length="255" comment="Client Id"/>
+	        <column xsi:type="varchar" name="dotsquares_number" nullable="false" length="255" comment="Dotsquares Number"/>
+	        <column xsi:type="varchar" name="enquiry_content" nullable="false" length="255" comment="Enquiry Content"/>
+	        <column xsi:type="varchar" name="attachment" nullable="false" length="255" comment="Attachment"/>
+	        <column xsi:type="int" name="enabled" nullable="false" comment="Enabled"/>
+	        <column xsi:type="timestamp" name="created_at" default="CURRENT_TIMESTAMP" nullable="false"  comment="Created At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

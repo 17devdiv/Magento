@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+      <script src="js/stacked-cards.js"/>
+    </head>
+    <body>
+    	<move element="header.panel" destination="header-wrapper" after="minicart" />
+    	<move element="top.search" destination="header-wrapper" after="header.panel" />
+    	<move element="navigation.sections" destination="header.container" />
+    	<move element="breadcrumbs" destination="main.content" before="-"/>
+
+    	<referenceContainer name="header.container">
+            <container name="header.panel.wrapper1" htmlClass="customwrapper" htmlTag="div" before="-">
+                <container name="header.panel1" label="Page Header Panel" htmlTag="div" htmlClass="customheader">
+                    <block class="Magento\Cms\Block\Block" name="header_top_offer">
+	                      <arguments>
+	                         <argument name="block_id" xsi:type="string">header_top_offer_stylo</argument>
+	                      </arguments>
+	                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="footer-container">
+            <referenceBlock name="store_switcher" remove="true" />
+            <referenceBlock name="report.bugs" remove="true" />
+            <referenceBlock name="form.subscribe" remove="true" />
+			<referenceBlock name="footer_links" remove="true"/>
+			<referenceBlock name="register-link" remove="true"/>
+            <container name="footer-wrap" htmlTag="div" htmlClass="container-ft">
+	            <container name="footer-row-1" htmlTag="div" htmlClass="row footer-links">
+	                <container name="footer_col_1" htmlTag="div" htmlClass="footer_col_1">
+	                    <block class="Magento\Cms\Block\Block" name="footer_col_1_inner">
+	                      <arguments>
+	                         <argument name="block_id" xsi:type="string">footer-col-1-stylo</argument>
+	                      </arguments>
+	                    </block>
+	                </container>
+	                <container name="footer_col_2" htmlTag="div" htmlClass="footer_col_2">
+	                    <block class="Magento\Cms\Block\Block" name="footer_col_2_inner">
+	                      <arguments>
+	                         <argument name="block_id" xsi:type="string">footer-col-2-stylo</argument>
+	                      </arguments>
+	                    </block>
+	                </container>
+	                <container name="footer_col_3" htmlTag="div" htmlClass="footer_col_3">
+	                    <block class="Magento\Cms\Block\Block" name="footer_col_3_inner">
+	                      <arguments>
+	                         <argument name="block_id" xsi:type="string">footer-col-3-stylo</argument>
+	                      </arguments>
+	                    </block>
+	                </container>
+	                <container name="footer_col_4" htmlTag="div" htmlClass="footer_col_4">
+	                    <block class="Magento\Cms\Block\Block" name="footer_col_4_inner">
+	                      <arguments>
+	                         <argument name="block_id" xsi:type="string">footer-col-4-stylo</argument>
+	                      </arguments>
+	                    </block>
+	                </container>
+	            </container>
+	        </container>
+            <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="Magento_Theme::html/copyright.phtml"/>
+        </referenceContainer>
+
+        <!-- <referenceContainer name="before.body.end">
+	        <block template="Magento_Theme::tag.phtml" name="tag_google"/>
+		</referenceContainer> -->
+		<referenceBlock name="head.additional">
+		    <block class="Dotsquares\Stylo\Block\TemplateDotsquares\Stylo\Block\TemplateDotsquares\Stylo\Block\Template" name="ogtag" template="Magento_Theme::og.phtml" after="-"/>
+		</referenceBlock> 
+    </body>
+</page>

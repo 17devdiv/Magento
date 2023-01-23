@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+
+ *
+ * @category    Dotsquares
+ * @package     Dotsquares_Marketplace
+ * @version     3.5.2
+
+ *
+ */
+! -->
+ <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="store_add">
+            <observer name="store_add" instance="Dotsquares\Marketplace\Observer\Createrewriteurl" />
+    </event>
+    <event name="checkout_submit_all_after">
+         <observer name="cataloginventorysave" instance="Dotsquares\Marketplace\Observer\Cataloginventorysave" />
+    </event>
+    <event name="controller_action_catalog_product_save_entity_after">
+         <observer name="cataloginventoryupdate" instance="Dotsquares\Marketplace\Observer\Cataloginventoryupdate" />
+    </event>
+ </config>

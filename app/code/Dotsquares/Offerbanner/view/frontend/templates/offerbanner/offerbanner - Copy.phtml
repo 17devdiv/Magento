@@ -1,0 +1,39 @@
+
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php $_datasets = $this->getDatasets(); ?>
+<div class="page-head">
+    <h3><?php echo $this->__('Offerbanner') ?></h3>
+</div>
+<?php echo $this->getPagerHtml(); ?>
+<?php if($_datasets->getSize()): ?>
+<table cellspacing="0" class="data-table" id="data-table">
+    <thead>
+        <tr>
+            <th><?php echo $this->__('Id') ?></th>
+            
+            <th><?php echo $this->__('name') ?></th>
+            <th><?php echo $this->__('content') ?></th>
+            <th><?php echo $this->__('image') ?></th>
+            <th><?php echo $this->__('url') ?></th>
+            <th> &nbsp; </th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($_datasets as $_dataset): ?>
+            <tr>
+                <td  valign="middle"   style="vertical-align:middle;"><?php echo $_dataset->getId() ?></td>
+                
+            <td  valign="middle"   style="vertical-align:middle;"><?php echo $_dataset->getData('name') ?></td>
+            <td  valign="middle"   style="vertical-align:middle;"><?php echo $_dataset->getData('content') ?></td>
+            <td  valign="middle"   style="vertical-align:middle;"><?php echo $_dataset->getData('image') ?></td>
+            <td  valign="middle"   style="vertical-align:middle;"><?php echo $_dataset->getData('url') ?></td>
+				<td  valign="middle"   style="vertical-align:middle;"><a href="#" ><?php echo($this->__('View')) ?></a></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<script type="text/javascript">decorateTable('data-table')</script>
+<?php echo $this->getPagerHtml(); ?>
+<?php else: ?>
+    <p><?php echo $this->__('You have submited no data.'); ?></p>
+<?php endif ?>

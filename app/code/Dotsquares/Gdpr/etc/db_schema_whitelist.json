@@ -1,0 +1,13 @@
+{
+    "newsletter_subscriber": {
+        "column": {
+            "othermails": true
+        }
+    },
+    "customer_entity": {
+        "column": {
+            "newslettermail": true,
+            "websiteterms": true
+        }
+    }
+}

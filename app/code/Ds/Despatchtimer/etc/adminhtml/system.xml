@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+	  <tab id="despatchtimer"  translate="label" sortOrder="40">		
+            <label>Despatch Timer</label>
+	  </tab>
+	  <section id="despatchtimer"  translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">		
+			<class>separator-top</class>
+			<label>DespatchTimer</label>
+			<tab>despatchtimer</tab>
+			<resource>DS_Despatchtimer::despatchtimer_configuration</resource>
+			<group id="settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Settings</label>						
+					<field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+							<label>Enabled</label>
+							<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					</field>
+					<field id="despatchtime" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+							<label>Despatch Time</label>
+							<comment>Enter time in 24hour format like 12:00</comment>
+					</field>
+					<field id="off_on_sat" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">							
+							<label>Despatch is made on Saturdays?</label>
+							<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					</field>
+					<field id="off_on_sun" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+							<label>Despatch is made on Sundays?</label>
+							<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					</field>
+			</group>		
+	  </section>
+	</system>
+</config>
