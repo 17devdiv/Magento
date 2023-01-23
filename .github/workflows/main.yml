@@ -10,7 +10,7 @@ jobs:
       mysql:
         image: docker://mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: Xkdx3tgkC977eHG
+          MYSQL_ROOT_PASSWORD: Xkdx3tgkC977eHg
           MYSQL_DATABASE: magento2divya
         ports:
           - 3306:3306
