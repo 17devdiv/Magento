@@ -12,7 +12,10 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
+    - name: Test coding standard
+       run: |
+         composer require --dev magento/magento-coding-standard
+         vendor/bin/phpcs --standard=Magento2 --extensions=php,phtml -p -s var/www/html/app/code
     - name: Install dependencies
       run: |
         composer install
