@@ -1,0 +1,42 @@
+name: Deploy to FTP Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        composer install
+    - name: Build code
+      run: |
+        php bin/magento setup:di:compile
+        php bin/magento setup:static-content:deploy
+    - name: Archive build
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: /home/magento2divya
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: build
+    - name: Deploy to FTP Server
+      run: |
+        apt-get update
+        apt-get install lftp -y
+        lftp -u magento2divya,Xkdx3tgkC977eHG -e "mirror -R /home/magento2divya ftp://192.168.4.28/; quit"
