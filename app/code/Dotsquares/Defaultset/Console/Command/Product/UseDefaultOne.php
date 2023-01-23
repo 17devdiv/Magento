@@ -62,7 +62,14 @@ class UseDefaultOne extends Command
      * @var StoreManagerInterface
      */
     protected $storeManager;
-
+    /**
+     * Constructor
+     *
+     * @param Magento\Eav\Setup\EavSetup   $eavSetup
+     * @param Magento\Framework\App\ResourceConnection   $resourceConnection
+     * @param Magento\Store\Model\StoreManagerInterface   $storeManager
+     * @param array $data
+     */
     public function __construct(
         EavSetup $eavSetup,
         ResourceConnection $resourceConnection,
