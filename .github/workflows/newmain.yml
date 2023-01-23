@@ -20,8 +20,10 @@ jobs:
     - name: Build code
       run: |
         php bin/magento module:enable --all
+        php bin/magento setup:upgrade
         php bin/magento setup:di:compile
         php bin/magento setup:static-content:deploy -f
+        php bin/magento cache:flush
     - name: Archive build
       uses: actions/upload-artifact@v2
       with:
