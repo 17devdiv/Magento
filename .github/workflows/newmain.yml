@@ -20,7 +20,6 @@ jobs:
     - name: Build code
       run: |
         php bin/magento setup:di:compile
-        php bin/magento cache:flush
     - name: Archive build
       uses: actions/upload-artifact@v2
       with:
