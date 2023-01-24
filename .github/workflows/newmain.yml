@@ -27,7 +27,13 @@ jobs:
       with:
         name: build
         path: /home/magento2divya
-
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      with:
+        server: 192.168.4.28
+        username: ${{ magento2divya}}
+        password: ${{ Xkdx3tgkC977eHG }}
+        server-dir: /home/magento2divya/public_html/
   deploy:
     runs-on: ubuntu-latest
     needs: build
