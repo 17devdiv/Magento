@@ -19,7 +19,6 @@ jobs:
       run: composer update
     - name: Build code
       run: |
-        php bin/magento module:enable --all
         php bin/magento setup:di:compile
         php bin/magento setup:static-content:deploy -f
         php bin/magento cache:flush
