@@ -18,7 +18,7 @@ jobs:
     - name: Update dependencies
       run: composer update
     - name: 📂 Sync files
-      uses: peaceiris/actions-ftp-sync@v2.2.0
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
         server: 192.168.4.28
         username: magento2divya
