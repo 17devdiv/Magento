@@ -11,9 +11,9 @@ jobs:
       - name: 🛠️ Configure LFTP
         run: mkdir ~/.lftp && echo "set ssl:verify-certificate false;" >> ~/.lftp/rc
       - name: 🔑 Load Secrets
-        run: echo "machine 192.168.4.28 login magento2divya password Xkdx3tgkC977eHG " > ~/.netrc
+        run: echo "machine 192.168.4.28 login magento2divya password $PASSWORD " > ~/.netrc
       - name: 📁 Upload Folder
-        run: lftp -e "mirror --parallel=100 -R $GITHUB_WORKSPACE/app/code/  /home/magento2divya/public_html/app/code/" 192.168.4.28
+        run: lftp -e "mirror --parallel=100 -R Magento/app/code  /home/magento2divya/public_html/app/code" 192.168.4.28
 
 
 
