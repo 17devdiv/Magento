@@ -20,11 +20,6 @@ jobs:
     - name: Build code
       run: |
         php bin/magento setup:di:compile
-    - name: Archive build
-      uses: actions/upload-artifact@v2
-      with:
-        name: build
-        path: /home/magento2divya
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
