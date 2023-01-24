@@ -27,7 +27,7 @@ return [
                 'persistent' => null
             ],
             'default' => [
-                'host' => '192.168.4.28',
+                'host' => 'localhost',
                 'dbname' => 'magento2divya',
                 'username' => 'magento2divya',
                 'password' => 'Xkdx3tgkC977eHG',
