@@ -24,6 +24,7 @@ jobs:
         username: magento2divya
         password: Xkdx3tgkC977eHG
         server-dir: /home/magento2divya/public_html/
+        timeout: 500
   deploy:
     runs-on: ubuntu-latest
     needs: build
