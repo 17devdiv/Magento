@@ -15,7 +15,7 @@ jobs:
       - name: 📄 Upload File
         run: lftp -e "put -O /home/magento2divya/public_html/  /app/code/" 192.168.4.28
       - name: 📁 Upload Folder
-        run: lftp -e "mirror --parallel=100 -R /app/code/ /home/magento2divya/public_html/app/code/" 192.168.4.28
+        run: lftp -e "mirror --parallel=100 -R Magento/app/code/ /home/magento2divya/public_html/app/code/" 192.168.4.28
 
 
 
