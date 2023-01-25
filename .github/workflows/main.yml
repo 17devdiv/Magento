@@ -1,3 +1,22 @@
+name: 🚀 FTP Deploy
+on: [push, workflow_dispatch]
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@v2
+      - name: 📦 Get LFTP
+        run: sudo apt install lftp
+      - name: 🛠️ Configure LFTP
+        run: mkdir ~/.lftp && echo "set ssl:verify-certificate false;" >> ~/.lftp/rc
+      - name: 🔑 Load Secrets
+        run: echo "machine 192.168.4.28 login magento2divya password $PASSWORD " > ~/.netrc
+      - name: 📁 Upload Folder
+        run: lftp -e "mirror --parallel=100 -R -I generated,vendor,lib,phpserver  /home/runner/work/Magento/Magento/app/code/ /home/magento2divya/public_html/app/code" 192.168.4.28
+
+
+
 # name: m2-actions-test
 # on: [push]
 

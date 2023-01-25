@@ -17,22 +17,13 @@ jobs:
         composer install
     - name: Update dependencies
       run: composer update
-    - name: Update database
-      run: |
-        php bin/magento setup:upgrade
-    - name: Build code
-      run: |
-        php bin/magento setup:db:status
-        php bin/magento module:enable --all
-        php bin/magento setup:di:compile
-        php bin/magento setup:static-content:deploy -f
-        php bin/magento cache:flush
-    - name: Archive build
-      uses: actions/upload-artifact@v2
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
-        name: build
-        path: /home/magento2divya
-
+        server: 192.168.4.28
+        username: magento2divya
+        password: Xkdx3tgkC977eHG
+        exclude: var,generated,vendor,pub,setup,stats,phpserver,lib,dev,bin
   deploy:
     runs-on: ubuntu-latest
     needs: build
