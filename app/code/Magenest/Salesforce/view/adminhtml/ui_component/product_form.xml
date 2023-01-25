@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  /**
+   * Copyright © 2018 Magenest. All rights reserved.
+   * See COPYING.txt for license details.
+   *
+   * Magenest_Salesforce extension
+   * NOTICE OF LICENSE
+   *
+   * @category Magenest
+   * @package  Magenest_Salesforce
+   * @author    dangnh@magenest.com
+   */
+  -->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="salesforce">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">SalesForce Integration</item>
+                <item name="sortOrder" xsi:type="number">500</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">false</item>
+            </item>
+        </argument>
+        <htmlContent name="html_content">
+            <argument name="block" xsi:type="object">Magenest\Salesforce\Block\Adminhtml\ProductEdit\Tab\View\SalesforceProductInfo</argument>
+        </htmlContent>
+    </fieldset>
+</form>

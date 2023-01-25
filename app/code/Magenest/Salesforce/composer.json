@@ -1,0 +1,21 @@
+{
+    "name": "magenest/module-salesforce-integration",
+    "description": "SalesForceCRM Integration extension by Magenest",
+    "type": "magento2-module",
+    "version": "3.1.2",
+    "license": [
+        "proprietary",
+        "OSL-3.0"
+    ],
+    "require": {
+        "magenest/core": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magenest\\Salesforce\\": ""
+        }
+    }
+}

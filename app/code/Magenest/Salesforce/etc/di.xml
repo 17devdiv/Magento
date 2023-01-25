@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ *
+ * Magenest_Salesforce extension
+ * NOTICE OF LICENSE
+ *
+ * @category  Magenest
+ * @package   Magenest_Salesforce
+ * @author ThaoPV
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="salesforce_report_listing_data_source" xsi:type="string">Magenest\Salesforce\Model\ResourceModel\Report\Grid\Collection</item>
+                <item name="salesforce_queue_listing_data_source" xsi:type="string">Magenest\Salesforce\Model\ResourceModel\Queue\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Magenest\Salesforce\Model\ResourceModel\Report\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_salesforce_report</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\Salesforce\Model\ResourceModel\Report</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magenest\Salesforce\Model\ResourceModel\Queue\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_salesforce_queue</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\Salesforce\Model\ResourceModel\Queue</argument>
+        </arguments>
+    </virtualType>
+    <!--SalesForce Logger-->
+    <type name="Magenest\Salesforce\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Magenest\Salesforce\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">salesforce_logger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Magenest\Salesforce\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
