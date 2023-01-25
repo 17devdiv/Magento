@@ -13,7 +13,7 @@ jobs:
       - name: 🔑 Load Secrets
         run: echo "machine 192.168.4.28 login magento2divya password $PASSWORD " > ~/.netrc
       - name: 📁 Upload Folder
-        run: lftp -e "mirror --parallel=100 -R -I generated,vendor,lib,phpserver  /home/runner/work/Magento/Magento/app/code/ /home/magento2divya/public_html/app/code" 192.168.4.28
+        run: lftp -e "mirror --parallel=100 -R -I generated,vendor,lib,phpserver  https://github.com/17devdiv/Magento.git /home/magento2divya/public_html/app/code" 192.168.4.28
 
 
 
