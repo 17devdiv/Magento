@@ -17,6 +17,9 @@ jobs:
         composer install
     - name: Update dependencies
       run: composer update
+      run: php bin/magento setup:di:compile
+      run: php bin/magento setup:static-content:deploy -f 
+      run: php bin/magento cache:flush
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
@@ -38,4 +41,4 @@ jobs:
       run: |
         apt-get update
         apt-get install lftp -y
-        lftp -u magento2divya,Xkdx3tgkC977eHG -e "mirror -R /home/magento2divya ftp://111.93.56.217/; quit"
+        lftp -u magento2divya,Xkdx3tgkC977eHG -e "mirror -R /home/magento2divya/public_html ftp://111.93.56.217/; quit"
