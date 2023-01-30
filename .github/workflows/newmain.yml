@@ -21,8 +21,8 @@ jobs:
       #   run: php bin/magento setup:di:compile
       # - name: Deploy the static files of magento
       #   run: php bin/magento setup:static-content:deploy -f
-      - name: Cache flush of magento
-        run: php bin/magento cache:flush
+#       - name: Cache flush of magento
+#         run: php bin/magento cache:flush
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
