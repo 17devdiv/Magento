@@ -10,35 +10,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Install dependencies
-      run: |
-        composer install
-    - name: Update dependencies
-      run: composer update
-      run: php bin/magento setup:di:compile
-      run: php bin/magento setup:static-content:deploy -f 
-      run: php bin/magento cache:flush
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.2.0
-      with:
-        server: 111.93.56.217
-        username: magento2divya
-        password: Xkdx3tgkC977eHG
-        exclude: var,generated,vendor,pub,setup,stats,phpserver,lib,dev,bin
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          composer install
+      - name: Update dependencies
+        run: composer update
+      - name: Compile the files of magento
+        run: php bin/magento setup:di:compile
+      - name: Deploy the static files of magento
+        run: php bin/magento setup:static-content:deploy -f
+      - name: Cache flush of magento
+        run: php bin/magento cache:flush
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: 111.93.56.217
+          username: magento2divya
+          password: Xkdx3tgkC977eHG
+          exclude: var,generated,vendor,pub,setup,stats,phpserver,lib,dev,bin
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Download artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: build
-    - name: Deploy to FTP Server
-      run: |
-        apt-get update
-        apt-get install lftp -y
-        lftp -u magento2divya,Xkdx3tgkC977eHG -e "mirror -R /home/magento2divya/public_html ftp://111.93.56.217/; quit"
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+      - name: Deploy to FTP Server
+        run: |
+          apt-get update
+          apt-get install lftp -y
+          lftp -u magento2divya,Xkdx3tgkC977eHG -e "mirror -R /home/magento2divya/public_html ftp://111.93.56.217/; quit"
