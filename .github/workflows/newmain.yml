@@ -20,7 +20,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
-        server: 192.168.4.28
+        server: 111.93.56.217
         username: magento2divya
         password: Xkdx3tgkC977eHG
         exclude: var,generated,vendor,pub,setup,stats,phpserver,lib,dev,bin
@@ -38,4 +38,4 @@ jobs:
       run: |
         apt-get update
         apt-get install lftp -y
-        lftp -u magento2divya,Xkdx3tgkC977eHG -e "mirror -R /home/magento2divya ftp://192.168.4.28/; quit"
+        lftp -u magento2divya,Xkdx3tgkC977eHG -e "mirror -R /home/magento2divya ftp://111.93.56.217/; quit"
