@@ -17,10 +17,10 @@ jobs:
           composer install
       - name: Update dependencies
         run: composer update
-      - name: Compile the files of magento
-        run: php bin/magento setup:di:compile
-      - name: Deploy the static files of magento
-        run: php bin/magento setup:static-content:deploy -f
+      # - name: Compile the files of magento
+      #   run: php bin/magento setup:di:compile
+      # - name: Deploy the static files of magento
+      #   run: php bin/magento setup:static-content:deploy -f
       - name: Cache flush of magento
         run: php bin/magento cache:flush
       - name: 📂 Sync files
