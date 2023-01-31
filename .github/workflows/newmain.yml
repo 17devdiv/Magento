@@ -25,6 +25,7 @@ jobs:
           server: 111.93.56.217
           username: magento2divya
           password: Xkdx3tgkC977eHG
+          remotePath: /home/magento2divya/public_html/
           exclude: var,generated,vendor,pub,setup,stats,phpserver,lib,dev,bin
   # deploy:
   #   runs-on: ubuntu-latest
