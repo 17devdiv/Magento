@@ -19,4 +19,4 @@ jobs:
           username: magento2divya
           password: Xkdx3tgkC977eHG
           port: 22
-          script: ls && cd /home/magento2divya/public_html && pwd && php bin/magento setup:upgrade
+          script: ls && cd /home/magento2divya/public_html && pwd && php bin/magento setup:upgrade && php bin/magento setup:compile && php bin/magento setup:static-content:deploy -f 
