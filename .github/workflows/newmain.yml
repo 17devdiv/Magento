@@ -27,7 +27,6 @@ jobs:
           password: Xkdx3tgkC977eHG
           server-dir: /home/magento2divya/public_html/
           exclude: |
-            **/.git/*
             **/vendor/**
             **/var/**
             **/generated/**
