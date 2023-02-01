@@ -16,7 +16,7 @@ return [
     'db' => [
         'connection' => [
             'indexer' => [
-                'host' => '111.93.56.217',
+                'host' => 'localhost',
                 'dbname' => 'magento2divya',
                 'username' => 'magento2divya',
                 'password' => 'Xkdx3tgkC977eHG',
@@ -27,7 +27,7 @@ return [
                 'persistent' => null
             ],
             'default' => [
-                'host' => '111.93.56.217',
+                'host' => 'localhost',
                 'dbname' => 'magento2divya',
                 'username' => 'magento2divya',
                 'password' => 'Xkdx3tgkC977eHG',
