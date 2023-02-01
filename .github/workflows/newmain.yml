@@ -19,7 +19,7 @@ jobs:
         run: composer update
       
 
-      - name: 📂 Sync files
+      - name: 📂 Sync files to Ftp server
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
           server: ${{secrets.SERVER}}
@@ -37,7 +37,7 @@ jobs:
             **/bin/**
             **/stats/**
             **/lib/**
-      - name: executing remote ssh commands using password
+      - name: Executing Upgrade,Compile,Deploy commands 
         uses: appleboy/ssh-action@v0.1.7
         with:
          host: ${{secrets.SERVER}}
