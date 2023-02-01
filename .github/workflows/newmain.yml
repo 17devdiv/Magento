@@ -45,4 +45,4 @@ jobs:
          password: ${{secrets.PASSWORD}}
          port: 22
          script: ls && cd ${{secrets.PATH}} && pwd && php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento c:f
-         timeout: 60000
+         timeout: 60000s
