@@ -22,10 +22,10 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
-          server: 111.93.56.217
+          server: ${{secrets.SERVER}}
           username: magento2divya
-          password: Xkdx3tgkC977eHG
-          server-dir: /home/magento2divya/public_html/
+          password: ${{secrets.PASSWORD}}
+          server-dir: ${{secrets.PATH}}
           exclude: |
             **/vendor/**
             **/var/**
@@ -37,28 +37,11 @@ jobs:
             **/bin/**
             **/stats/**
             **/lib/**
-          #exclude: var,generated,vendor,pub,setup,stats,phpserver,lib,dev,bin
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: build
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v2
-  #     - name: Download artifact
-  #       uses: actions/download-artifact@v2
-  #       with:
-  #         name: build
-  #     - name: Deploy to FTP Server
-  #       run: |
-  #         apt-get update
-  #         apt-get install lftp -y
-  #         lftp -u magento2divya,Xkdx3tgkC977eHG -e "mirror -R /home/magento2divya/public_html/ ftp://111.93.56.217/; quit"
-
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v0.1.7
         with:
-         host: 111.93.56.217
+         host: ${{secrets.SERVER}}
          username: magento2divya
-         password: Xkdx3tgkC977eHG
+         password: ${{secrets.PASSWORD}}
          port: 22
-         script: ls && cd /home/magento2divya/public_html && pwd && php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento c:f
+         script: ls && cd ${{secrets.PATH}} && pwd && php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento c:f
