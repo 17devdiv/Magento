@@ -26,7 +26,18 @@ jobs:
           username: magento2divya
           password: Xkdx3tgkC977eHG
           server-dir: /home/magento2divya/public_html/
-          exclude: var,generated,vendor,pub,setup,stats,phpserver,lib,dev,bin
+          exclude: |
+            **/.git*
+            **/vendor/**
+            **/var/**
+            **/generated/**
+            **/pub/**
+            **/setup/**
+            **/phpserver/**
+            **/dev/**
+            **/bin/**
+            **/stats/**
+          #exclude: var,generated,vendor,pub,setup,stats,phpserver,lib,dev,bin
   # deploy:
   #   runs-on: ubuntu-latest
   #   needs: build
