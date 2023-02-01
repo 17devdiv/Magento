@@ -37,6 +37,7 @@ jobs:
             **/dev/**
             **/bin/**
             **/stats/**
+            **/lib/**
           #exclude: var,generated,vendor,pub,setup,stats,phpserver,lib,dev,bin
   # deploy:
   #   runs-on: ubuntu-latest
