@@ -6,6 +6,7 @@
             <argument name="commands" xsi:type="array">
                 <item name="Dotsquares_DefaultsetAll" xsi:type="object">Dotsquares\Defaultset\Console\Command\Product\UseDefaultValueAll</item>
                 <item name="Dotsquares_DefaultsetOne" xsi:type="object">Dotsquares\Defaultset\Console\Command\Product\UseDefaultOne</item>
+                <item name="Dotsquares_ResetToDefault" xsi:type="object">Dotsquares\Defaultset\Console\Command\Product\ResetToDefault</item>
             </argument>
         </arguments>
     </type>
